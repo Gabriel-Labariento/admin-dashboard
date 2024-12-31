@@ -1,0 +1,123 @@
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  /* 2. Remove default margin */
+  * {
+    margin: 0;
+  }
+  
+  body {
+    /* 3. Add accessible line-height */
+    line-height: 1.5;
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /* 5. Improve media defaults */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  /* 6. Inherit fonts for form controls */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  
+  /* 7. Avoid text overflows */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  
+  /* 8. Improve line wrapping */
+  p {
+    text-wrap: pretty;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+  
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+  /* CSS RESET FROM https://www.joshwcomeau.com/css/custom-css-reset/ */
+
+  /* FONTS*/
+  @font-face {
+    font-family: 'robotoregular';
+    src: url('fonts/roboto-regular-webfont.woff2') format('woff2'),
+         url('fonts/roboto-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.container {
+    display: grid;
+    grid-template: 1fr 4fr / 1fr 4fr;
+    grid-template-areas:
+    "sidebar header"
+    "sidebar main";
+    height: 100vh;
+    font-family: robotoregular, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.sidebar {
+    background-color: #042f2e;
+    grid-area: sidebar;
+    display: grid;
+    grid-template-rows: 1fr 3fr 3fr;
+    color: #ecfdf5;
+    padding-left: 1vw;
+}
+
+.logo-container {
+    display: grid;
+    grid-template-columns: 40px 6fr;
+    gap: 10px;
+    padding-top: 2vh;
+}
+
+.logo-text{
+    font-size: 2rem;
+}
+
+
+.logo-container > img {
+    height: 50px;
+    width: 50px;
+}
+
+.sidebar-menu > ul{
+    display: grid;
+    grid-template-rows: repeat(6, 50px);
+    gap: 10px;
+    width: 100%;
+    padding-left: 0;
+}
+
+.sidebar-menu > ul > li{
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: 30px 6fr;
+    column-gap: 10px;
+    font-size: 1.2rem;
+    align-items: center;
+}
+
+
+.header{
+    background-color: lightcoral;
+    grid-area: header;
+}
+
+.main{
+    background-color: lightgreen;
+    grid-area: main;
+}
