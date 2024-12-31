@@ -48,6 +48,11 @@
 
   /* CSS RESET FROM https://www.joshwcomeau.com/css/custom-css-reset/ */
 
+:root{
+  --darkGreen: #042f2e;
+  --subtleGreen: #dcfce7;
+}
+
   /* FONTS*/
   @font-face {
     font-family: 'robotoregular';
@@ -69,7 +74,7 @@
 }
 
 .sidebar {
-    background-color: #042f2e;
+    background-color: var(--darkGreen);
     grid-area: sidebar;
     display: grid;
     grid-template-rows: 50px 3fr 3fr;
@@ -123,11 +128,50 @@
 
 
 .header{
-    background-color: lightcoral;
+    background-color: white;
     grid-area: header;
+    display: grid;
+    grid-template: 40% 60%  / 1.5fr 1fr;
+    grid-template-areas: 
+    "search user"
+    "greeting action";
+}
+
+.search-container{
+  grid-area: search;
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  grid-auto-rows: 1rem;
+  gap: 20px;
+  align-content: center;
+  padding-left: 50px;
+}
+
+.search-container > input{
+  border: none;
+  background-color: var(--subtleGreen);
+  max-width: 90%;
+  line-height: 1.5;
+  height: 1.2rem;
+  border-radius: 20px;
+  outline: none;
+}
+
+.search-container > input:focus{
+  border: 1px solid var(--darkGreen);
+}
+
+.user-container{
+  grid-area: user;
+}
+.greeting-container{
+  grid-area: greeting;
+}
+.action-container{
+  grid-area: action;
 }
 
 .main{
-    background-color: lightgreen;
+    background-color: var(--subtleGreen);
     grid-area: main;
 }
