@@ -264,6 +264,8 @@
 
 .card-description{
   max-width: 80%;
+  font-weight: lighter;
+  font-size: small;
 } 
 
 .main-side-container{
@@ -320,7 +322,8 @@
 
 .other-profile {
   display: grid;
-  grid-template-columns: 50px 1fr;
+  grid-template-columns: 35px 1fr;
+  gap: 20px;
 }
 
 
