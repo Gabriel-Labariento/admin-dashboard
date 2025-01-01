@@ -120,7 +120,7 @@
 .sidebar-settings > ul > li{
     list-style-type: none;
     display: grid;
-    grid-template-columns: 30px 6fr;
+    grid-template-columns: 25px 6fr;
     column-gap: 10px;
     font-size: 1.2rem;
     align-items: center;
@@ -194,9 +194,23 @@
 
 .action-container{
   grid-area: action;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  grid-auto-rows: 35px;
+  justify-content: center;
+  padding-top: 2%;
 }
 
 .main{
     background-color: var(--subtleGreen);
     grid-area: main;
+}
+
+.action-container button {
+  width: clamp(70px, 100px, 120px);
+  background-color: var(--darkGreen);
+  color: white;
+  outline: none;
+  border-radius: 20px;
 }
